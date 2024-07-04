@@ -122,8 +122,8 @@ unsigned int SOIL_direct_load_DDS_from_memory(
 unsigned int SOIL_internal_create_OGL_texture(
     const unsigned char* data,
     int                  width,
-    int height,
-    int channels,
+    int                  height,
+    int                  channels,
     unsigned int         reuse_texture_ID,
     unsigned int         flags,
     unsigned int         opengl_texture_type,
