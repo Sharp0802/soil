@@ -15,75 +15,70 @@
 	DXT1 or DXT5, then saves the converted image to disk.
 	\return 0 if failed, otherwise returns 1
 **/
-int
-save_image_as_DDS
-(
-    const char *filename,
-    int width, int height, int channels,
-    const unsigned char *const data
-);
+int save_image_as_DDS(
+    const char*                filename,
+    int                        width,
+    int                        height,
+    int                        channels,
+    const unsigned char* const data);
 
 /**
 	take an image and convert it to DXT1 (no alpha)
 **/
-unsigned char*
-convert_image_to_DXT1
-(
-    const unsigned char *const uncompressed,
-    int width, int height, int channels,
-    int *out_size
-);
+unsigned char* convert_image_to_DXT1(
+    const unsigned char* const uncompressed,
+    int                        width,
+    int                        height,
+    int                        channels,
+    int*                       out_size);
 
 /**
 	take an image and convert it to DXT5 (with alpha)
 **/
-unsigned char*
-convert_image_to_DXT5
-(
-    const unsigned char *const uncompressed,
-    int width, int height, int channels,
-    int *out_size
-);
+unsigned char* convert_image_to_DXT5(
+    const unsigned char* const uncompressed,
+    int                        width,
+    int                        height,
+    int                        channels,
+    int*                       out_size);
 
 /**	A bunch of DirectDraw Surface structures and flags **/
 typedef struct
 {
-    unsigned int    dwMagic;
-    unsigned int    dwSize;
-    unsigned int    dwFlags;
-    unsigned int    dwHeight;
-    unsigned int    dwWidth;
-    unsigned int    dwPitchOrLinearSize;
-    unsigned int    dwDepth;
-    unsigned int    dwMipMapCount;
-    unsigned int    dwReserved1[ 11 ];
+    unsigned int dwMagic;
+    unsigned int dwSize;
+    unsigned int dwFlags;
+    unsigned int dwHeight;
+    unsigned int dwWidth;
+    unsigned int dwPitchOrLinearSize;
+    unsigned int dwDepth;
+    unsigned int dwMipMapCount;
+    unsigned int dwReserved1[11];
 
     /*  DDPIXELFORMAT	*/
     struct
     {
-        unsigned int    dwSize;
-        unsigned int    dwFlags;
-        unsigned int    dwFourCC;
-        unsigned int    dwRGBBitCount;
-        unsigned int    dwRBitMask;
-        unsigned int    dwGBitMask;
-        unsigned int    dwBBitMask;
-        unsigned int    dwAlphaBitMask;
-    }
-    sPixelFormat;
+        unsigned int dwSize;
+        unsigned int dwFlags;
+        unsigned int dwFourCC;
+        unsigned int dwRGBBitCount;
+        unsigned int dwRBitMask;
+        unsigned int dwGBitMask;
+        unsigned int dwBBitMask;
+        unsigned int dwAlphaBitMask;
+    } sPixelFormat;
 
     /*  DDCAPS2	*/
     struct
     {
-        unsigned int    dwCaps1;
-        unsigned int    dwCaps2;
-        unsigned int    dwDDSX;
-        unsigned int    dwReserved;
-    }
-    sCaps;
-    unsigned int    dwReserved2;
-}
-DDS_header ;
+        unsigned int dwCaps1;
+        unsigned int dwCaps2;
+        unsigned int dwDDSX;
+        unsigned int dwReserved;
+    } sCaps;
+
+    unsigned int dwReserved2;
+} DDS_header;
 
 /*	the following constants were copied directly off the MSDN website	*/
 
