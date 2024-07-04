@@ -5,6 +5,8 @@
 #ifndef HEADER_STB_IMAGE_DDS_AUGMENTATION
 #define HEADER_STB_IMAGE_DDS_AUGMENTATION
 
+#include <stb_image.h>
+
 //	is it a DDS file?
 extern int stbi_dds_test_memory(stbi_uc const* buffer, int len);
 
