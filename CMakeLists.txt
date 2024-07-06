@@ -8,7 +8,7 @@ add_subdirectory(cmake/stb)
 file(GLOB SOURCES src/*.c)
 file(GLOB HEADERS include/SOIL/*.h)
 
-add_library(soil SHARED ${SOURCES} ${HEADERS})
+add_library(soil ${SOIL_LIBRARY_TYPE} ${SOURCES} ${HEADERS})
 target_link_libraries(soil PRIVATE stb OpenGL::GL)
 target_include_directories(soil PUBLIC include)
 
