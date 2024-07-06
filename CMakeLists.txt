@@ -12,6 +12,6 @@ add_library(soil SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(soil PRIVATE stb OpenGL::GL)
 target_include_directories(soil PUBLIC include)
 
-if (WIN32)
+if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     target_compile_definitions(soil PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif ()
